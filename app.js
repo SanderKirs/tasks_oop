@@ -5,6 +5,8 @@ const form = document.querySelector('form');
 const taskInput = document.querySelector('#task');
 const taskList = document.querySelector('ul');
 taskList.addEventListener('click', deleteTask);
+const clearBtn = document.querySelector('#clear-tasks');
+clearBtn.addEventListener('click', deleteTasks);
 
 form.addEventListener('submit', addTask);
 
@@ -21,3 +23,10 @@ function deleteTask(e){
     task = task.textContent;
     ls.deleteTask(task);
 }
+
+function deleteTasks(e){
+    let tasks = document.querySelector('ul');
+    ui.deleteTasks(tasks);
+    ls.deleteTask();
+}
+
