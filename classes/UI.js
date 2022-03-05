@@ -19,4 +19,12 @@ class UI {
 
         task.addedToUI();
     }
+    deleteTask(task){
+        const deleteIcon = task.nextSibling;
+        if(deleteIcon.textContent === 'X'){
+            if(confirm('Do you want to delete this task?')) {
+                task.parentElement.remove();
+            }
+        }
+    }
 }
